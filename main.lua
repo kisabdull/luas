@@ -71,7 +71,7 @@ end
 
 Menu.Banner = {
     enabled = true,
-    imageUrl = "https://i.imgur.com/cOFPinI.gif",
+    imageUrl = "https://imgur.com/a/dn1wvR9",
     height = 100
 }
 
@@ -122,50 +122,45 @@ function Menu.LoadBannerTexture(url)
 end
 
 Menu.Colors = {
-    HeaderPink = { r = 148, g = 0, b = 211 },
-    SelectedBg = { r = 148, g = 0, b = 211 },
+    HeaderAqua = { r = 0, g = 255, b = 255 },
+    HeaderRed = { r = 255, g = 0, b = 0 },
+    SelectedBg = { r = 0, g = 255, b = 255 },
     TextWhite = { r = 255, g = 255, b = 255 },
     BackgroundDark = { r = 0, g = 0, b = 0 },
     FooterBlack = { r = 0, g = 0, b = 0 }
 }
 
-Menu.CurrentTheme = "Purple"
+Menu.CurrentTheme = "Aqua"
 
 function Menu.ApplyTheme(themeName)
     if not themeName or type(themeName) ~= "string" then
-        themeName = "Purple"
+        themeName = "Aqua"
     end
     
 
     local themeLower = string.lower(themeName)
     Menu.CurrentTheme = themeName
     
-    if themeLower == "red" then
-        Menu.Colors.HeaderPink = { r = 255, g = 0, b = 0 }
+    if themeLower == "SpongeBob V1" then
+        Menu.Colors.HeaderAqua = { r = 0, g = 255, b = 255 } 
+        Menu.Colors.SelectedBg = { r = 0, g = 255, b = 255 }
+        Menu.Banner.imageUrl = "https://imgur.com/a/dn1wvR9.png"
+        Menu.CurrentTheme = "aqua"
+    elseif themeLower == "SpongeBob V2" then
+        Menu.Colors.HeaderAqua = { r = 0, g = 255, b = 255 }
+        Menu.Colors.SelectedBg = { r = 0, g = 255, b = 255 }
+        Menu.Banner.imageUrl = "https://imgur.com/68HWPzz.png"
+        Menu.CurrentTheme = "aqua"
+    elseif themeLower == "Dexter & Abyss" then
+        Menu.Colors.HeaderRed = { r = 255, g = 0, b = 0 }
         Menu.Colors.SelectedBg = { r = 255, g = 0, b = 0 }
-        Menu.Banner.imageUrl = "https://i.imgur.com/cOFPinI.gif"
-        Menu.CurrentTheme = "Red"
-    elseif themeLower == "purple" then
-        Menu.Colors.HeaderPink = { r = 148, g = 0, b = 211 }
-        Menu.Colors.SelectedBg = { r = 148, g = 0, b = 211 }
-        Menu.Banner.imageUrl = "https://i.imgur.com/8wGWjBh.png"
-        Menu.CurrentTheme = "Purple"
-    elseif themeLower == "gray" then
-        Menu.Colors.HeaderPink = { r = 128, g = 128, b = 128 }
-        Menu.Colors.SelectedBg = { r = 128, g = 128, b = 128 }
-        Menu.Banner.imageUrl = "https://i.imgur.com/iZnBhaR.jpeg"
-        Menu.CurrentTheme = "Gray"
-    elseif themeLower == "pink" then
-        Menu.Colors.HeaderPink = { r = 255, g = 20, b = 147 }
-        Menu.Colors.SelectedBg = { r = 255, g = 20, b = 147 }
-        Menu.Banner.imageUrl = "https://i.imgur.com/BbABj2n.png"
-        Menu.CurrentTheme = "pink"
-    else
-        Menu.Colors.HeaderPink = { r = 148, g = 0, b = 211 }
-        Menu.Colors.SelectedBg = { r = 148, g = 0, b = 211 }
-        Menu.Banner.imageUrl = "https://i.imgur.com/8wGWjBh.png"
-        Menu.CurrentTheme = "Purple"
-    end
+        Menu.Banner.imageUrl = "https://imgur.com/SocjIuY.png"
+        Menu.CurrentTheme = "red"
+    else themeLower == "Abyss" then
+        Menu.Colors.HeaderAqua = { r = 0, g = 255, b = 255 }
+        Menu.Colors.SelectedBg = { r = 0, g = 255, b = 255 }
+        Menu.Banner.imageUrl = "https://imgur.com/qECCQJr.png"
+        Menu.CurrentTheme = "aqua"
 
     if Menu.Banner.enabled and Menu.Banner.imageUrl then
         Menu.LoadBannerTexture(Menu.Banner.imageUrl)
@@ -1524,7 +1519,7 @@ function Menu.DrawFooter()
     local scaledFooterSize = footerSize * scale
     local footerTextY = footerY + (footerHeight / 2) - (scaledFooterSize / 2) + (1 * scale)
 
-    local footerText = " https://discord.gg/zP8MaFP9uM "
+    local footerText = " https://discord.gg/5aXzZ2hW6 "
     local currentX = x + footerPadding
 
     local textWidth = 0
